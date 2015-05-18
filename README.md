@@ -1,17 +1,17 @@
-This repo is just clone of [Famodev](https://github.com/particle4dev/famodev) Making it compatible with [Famono](https://github.com/raix/famono) I pull&push items only I need for my project.
+A basic starter template for apps using
 
-Steps to include in your project
+- Meteor
+- Famous
+- FlowRouter
+- [Famodev](https://github.com/particle4dev/famodev)
 
-in your `lib/smart.require`
 
-```
-"famodev": {
-    "git": "https://github.com/sayawan/famodev.git",
-    "root": "src"
-},
-```
 
-include `famodev` in your template
+## FamoDev
+
+Forked to make it compatible with [Famono](https://github.com/raix/famono)
+FamoDev allows you to add reactive meteor templates to any Famous surface.
+Example:
 
 ```
 var ReactiveTemplate = famodev.ReactiveTemplate;
@@ -24,7 +24,8 @@ var reactive = new ReactiveTemplate({
 });
 ```
 
-Look at source `src` folder for more docs
+Look at famodev source `src` folder for more docs
 
+# ChatRoom!
 
-[![Join the chat at https://gitter.im/dcsan/flowwy](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dcsan/flowwy?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/dcsan/moflow](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dcsan/moflow?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
