@@ -1,0 +1,16 @@
+{
+  "folders":
+  [
+    {
+      "folder_exclude_patterns":
+      [
+        "app/.meteor/local",
+        // ".meteor/.famono*",
+        "/packages/*/.*",
+        ".git"
+      ],
+      "follow_symlinks": true,
+      "path": "/Users/dc/dev/ref/flowwy-dcsan"
+    },
+  ]
+}

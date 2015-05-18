@@ -1,0 +1,6 @@
+[submodule "packages/famous-flex-upstream"]
+	   path = packages/famous-flex-upstream
+	   url = git@github.com:IjzerenHein/famous-flex.git
+[submodule "packages/famous-flex-dcsan"]
+	   path = packages/famous-flex-dcsan
+	   url = git@github.com:dcsan/famous-flex.git

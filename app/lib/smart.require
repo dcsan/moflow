@@ -1,0 +1,26 @@
+{
+  "famous": {
+    "git": "https://github.com/Famous/famous.git",
+    "root": "src"
+  },
+  "famous.polyfills": {
+    "git": "https://github.com/Famous/polyfills.git"
+  },
+  "library": {
+    "git": "https://github.com/raix/library.git"
+  },
+  "famous-polyfills": {
+    "alias": "famous.polyfills"
+  },
+  "famodev": {
+      "git": "https://github.com/sayawan/famodev.git",
+      "root": "src"
+  },
+
+  "flex": {
+    "git": "https://github.com/dcsan/famous-flex.git",
+    "root": "src",
+    "branch": "v031-branch"
+  }
+
+}

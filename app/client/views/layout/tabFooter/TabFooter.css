@@ -1,0 +1,8 @@
+.ff-tabbar.item {
+  font-size: 20px;
+  background-color: #222;
+  color: white;
+}
+.ff-tabbar.item .icon {
+  font-size: 24px;
+}
