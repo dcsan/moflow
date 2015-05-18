@@ -1,4 +1,6 @@
-https://github.com/dcsan/famous-flex/releases/tag/v0.3.2
+# tag issues with famono
+prevent this working:
+
 
   "flex": {
     "git": "https://github.com/IjzerenHein/famous-flex.git",
@@ -6,13 +8,8 @@ https://github.com/dcsan/famous-flex/releases/tag/v0.3.2
      "tag": "v0.3.2"
   }
 
+https://github.com/dcsan/famous-flex/releases/tag/v0.3.2
 
-
-  "flex": {
-    "git": "https://github.com/IjzerenHein/famous-flex.git",
-    "root": "src",
-     "tag": "v0.3.1"
-  },
 
 // working:
 
@@ -42,3 +39,11 @@ https://github.com/dcsan/famous-flex/releases/tag/v0.3.2
   }
 
 }  
+
+
+
+  "flex": {
+    "git": "https://github.com/dcsan/famous-flex.git",
+    "root": "src",
+    "branch": "v031-branch"
+  }

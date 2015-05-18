@@ -1,4 +1,5 @@
 {
+
   "famous": {
     "git": "https://github.com/Famous/famous.git",
     "root": "src"
@@ -18,9 +19,8 @@
   },
 
   "flex": {
-    "git": "https://github.com/dcsan/famous-flex.git",
-    "root": "src",
-    "branch": "v031-branch"
+    "git": "https://github.com/IjzerenHein/famous-flex.git",
+    "root": "src"
   }
 
 }
