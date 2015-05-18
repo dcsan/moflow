@@ -1,14 +1,28 @@
-A basic starter template for apps using
+Demo: http://moflow.meteor.com
 
+# Outline
+A skeleton front-end framework that can be quickly used to build mobile html5 apps that feel as smooth as possible Includes:
 - Meteor
 - Famous
 - FlowRouter
 - [Famodev](https://github.com/particle4dev/famodev)
 
+# Getting started
+clone the repo
 
+    bin/run.sh
+
+Will start it on port 3010 (there are some other utility scripts in /bin too).
+
+# Dev notes
+
+## FlowRouter
+Better lifecycle management than IronRouter.
+
+## Famous Flex
+Making famous much more usable with awesome flexible scrolling views.
 
 ## FamoDev
-
 Forked to make it compatible with [Famono](https://github.com/raix/famono)
 FamoDev allows you to add reactive meteor templates to any Famous surface.
 Example:
@@ -23,6 +37,8 @@ var reactive = new ReactiveTemplate({
     }
 });
 ```
+
+
 
 Look at famodev source `src` folder for more docs
 
