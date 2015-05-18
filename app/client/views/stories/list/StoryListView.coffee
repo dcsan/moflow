@@ -51,7 +51,6 @@ _createScrollView = (tree) ->
       ]
       template: Template.StoryCard
       data: storyData
-      classes: [ 'minicard' ]
       properties:
         color: 'black'
         textAlign: 'center'
