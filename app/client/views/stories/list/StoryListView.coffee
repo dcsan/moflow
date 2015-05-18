@@ -24,12 +24,12 @@ _createBack = (tree, sc) ->
   surface.pipe(sc)
   return surface
 
-_createScrollView = ->
+_createScrollView = (tree) ->
   surfaces = []
   scrollView = new FlexScrollView(
     layout: CollectionLayout
     mouseMove: true
-    direction: 1
+    direction: 2
     layoutOptions:
       itemSize: [ true, 150 ]
       margins: [0, 0, 0, 10 ]
@@ -79,7 +79,7 @@ _createScrollView = ->
       0.5
       0.5
     ])
-  @add(scrollView.state).add scrollView
+  tree.add(scrollView.state).add scrollView
   return scrollView
 
 
@@ -91,7 +91,7 @@ _createScrollView = ->
 
 @StoryListView = ->
   View.apply this, arguments
-  sc = _createScrollView.call this
+  sc = _createScrollView(this)
   _createBack(this, sc)
   return
 

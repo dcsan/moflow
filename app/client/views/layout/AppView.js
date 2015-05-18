@@ -36,11 +36,15 @@ AppView = function() {
     // var front = famous.utilities.Utility.transformInFront
     var front = new StateModifier({
         // transform: Transform.inFront
-        transform: Transform.translate(0,0,2)
+        transform: Transform.translate(0,0,50)
     });
+    // famous.utilities.Utility.transformBehind
+    var behind = new StateModifier({
+        transform: Transform.translate(0,0,-50)
+    })
     this.layout.footer.add(front).add(footer);
     this.content = new RenderController();
-    this.layout.content.add(famous.utilities.Utility.transformBehind).add(this.content);
+    this.layout.content.add(behind).add(this.content);
     this.add(this.layout);
 
     createPages.call(this);

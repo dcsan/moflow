@@ -19,7 +19,7 @@ TabFooterView = function() {
 
     var tabBar = new TabBar({
         createRenderables: {
-            background: true,
+            // background: true,
             selectedItemOverlay: true
         }
     });
@@ -36,12 +36,12 @@ TabFooterView = function() {
         FlowRouter.go('/'+url);
     });
 
-    tabBar.state = new StateModifier({
-        transform: Transform.inFront
-        // transform: Transform.translate(0,0,2)
-    });
-    // this.add(tabBar); // add to the render-tree
-    this.add(tabBar.state).add(tabBar);
+    // tabBar.state = new StateModifier({
+    //     transform: Transform.inFront
+    //     // transform: Transform.translate(0,0,2)
+    // });
+    this.add(tabBar); // add to the render-tree
+    // this.add(tabBar.state).add(tabBar);
 
 }
 
