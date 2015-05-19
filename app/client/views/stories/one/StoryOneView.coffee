@@ -11,10 +11,7 @@ ReactiveTemplate = famodev.ReactiveTemplate
 
 _createBack = ->
   surface = new Surface
-    size: [
-      100
-      100
-    ]
+    size: [ 100, 100 ]
     content: 'back'
     properties: 'background-color': 'red'
 

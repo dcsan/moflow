@@ -33,18 +33,22 @@ AppView = function() {
     });
 
 
+    // --header
+    var header = new HeaderBarView(this);
+    this.layout.header.add(header);
+
     //-- navbar
     // var front = famous.utilities.Utility.transformInFront
     var front = new StateModifier({
         transform: Transform.translate(0,0,0)
     });
     var navbar = new TabFooterView();
-    var behind = new StateModifier({
-        transform: Transform.translate(0,0,-50)
-    })
     this.layout.footer.add(front).add(navbar);
 
     // content
+    var behind = new StateModifier({
+        transform: Transform.translate(0,0,-50)
+    })
     this.content = new RenderController();
     this.layout.content.add(behind).add(this.content);
     this.add(this.layout);

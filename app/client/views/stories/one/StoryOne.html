@@ -4,14 +4,14 @@
 
     <h1>{{ title }}</h1>
     <p>I am a native scrolling div</p>
-    <p>I respond to scrollwheel events but not to touch events unless famous is running with appMode:false. which messes up a lot of other stuff like the tabFooter!</p>
-    <ul>
-      
+    <p>I respond to scrollwheel events but not to touch events unless famous is running with appMode:false.</p>
+
+    <ul>     
     {{#each tiles}}
-      <li>  
-      {{this}}
-      {{name}}
+      <li>
+      item {{this}}
       </li>
+      <hr/>
 
     {{/each}}
     </ul>

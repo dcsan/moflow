@@ -30,7 +30,7 @@ _createBack = (tree, scrollView) ->
 
 _createScrollView = (tree) ->
   surfaces = []
-  scrollView = new FlexScrollView(
+  scrollView = new FlexScrollView
     layout: CollectionLayout
     mouseMove: true
     direction: 2
@@ -38,7 +38,8 @@ _createScrollView = (tree) ->
       itemSize: [ true, 150 ]
       margins: [0, 0, 0, 0 ]
       spacing: [5, 5]
-    dataSource: surfaces)
+    dataSource: surfaces
+
   i = 0
   surf = undefined
   while i <= 20

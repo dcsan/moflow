@@ -1,10 +1,7 @@
 Template.StoryOne.helpers
   'title': ->
     tid = FlowRouter.getParam('cname')
-    return "title #{tid}"
-    #     item: function() {
-    #     return Items.findOne(FlowRouter.getParam('id'));
-    # }
+    return "story #{tid}"
 
   'tiles': ->
     [1..50]
