@@ -103,6 +103,7 @@ function createPages() {
     this.createPage('card', new CardView({}));
     this.createPage('stories', new StoryListView({}));
     this.createPage('story', new StoryOneView({}));
+    this.createPage('load', new LoadView({}));
 
 }
 

@@ -2,7 +2,7 @@
 // CARD = { text: "sometext" }
 //
 Meteor.publish('cards', function(limit) {
-    Meteor._sleepForMs(200);
+    Meteor._sleepForMs(2000);
     return Cards.find({ }, { limit: limit, fields: { subitems: 0 } });
 });
 
