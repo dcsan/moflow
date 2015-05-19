@@ -32,20 +32,23 @@ AppView = function() {
         footerSize: 50
     });
 
-    var footer = new TabFooterView();
+
+    //-- navbar
     // var front = famous.utilities.Utility.transformInFront
     var front = new StateModifier({
-        // transform: Transform.inFront
-        transform: Transform.translate(0,0,50)
+        transform: Transform.translate(0,0,0)
     });
-    // famous.utilities.Utility.transformBehind
+    var navbar = new TabFooterView();
     var behind = new StateModifier({
         transform: Transform.translate(0,0,-50)
     })
-    this.layout.footer.add(front).add(footer);
+    this.layout.footer.add(front).add(navbar);
+
+    // content
     this.content = new RenderController();
     this.layout.content.add(behind).add(this.content);
     this.add(this.layout);
+
 
     createPages.call(this);
     showPage.call(this);

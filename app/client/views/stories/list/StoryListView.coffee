@@ -9,19 +9,23 @@ famodev.helpers
 ReactiveTemplate = famodev.ReactiveTemplate
 
 
-_createBack = (tree, sc) ->
+_createBack = (tree, scrollView) ->
   surface = new Surface
     size: [undefined, 50]
-    content: 'Storylist'
-    properties: 'background-color': '#67FBE6'
+    content: 'Storylist background'
+    properties: {
+      'background-color': 'purple'
+      color: 'white'
+    }
 
   modifier = new StateModifier
-    origin: [ 1, 0 ]
+    origin: [ 0.5, 0.5 ]
     align: [0.5, 0]
-    transform: Transform.behind
+    # transform: Transform.behind
+    transform: Transform.translate(0,0, -1)
 
   tree.add(modifier).add surface
-  surface.pipe(sc)
+  surface.pipe(scrollView)
   return surface
 
 _createScrollView = (tree) ->
@@ -32,7 +36,7 @@ _createScrollView = (tree) ->
     direction: 2
     layoutOptions:
       itemSize: [ true, 150 ]
-      margins: [0, 0, 0, 10 ]
+      margins: [0, 0, 0, 0 ]
       spacing: [5, 5]
     dataSource: surfaces)
   i = 0
@@ -69,16 +73,13 @@ _createScrollView = (tree) ->
     # famous.utilities.Timer.setTimeout(function() {}, 100);
     surfaces.push node
     i++
-  scrollView.state = new StateModifier(
-    origin: [
-      0.5
-      0.5
-    ]
-    align: [
-      0.5
-      0.5
-    ])
-  tree.add(scrollView.state).add scrollView
+  behind = new StateModifier
+    origin: [0.5, 0.5]
+    align: [0.5, 0.5]
+    # transform: Transform.inFront
+    transform: Transform.translate(0,0, 1)
+
+  tree.add(behind).add scrollView
   return scrollView
 
 
@@ -90,8 +91,8 @@ _createScrollView = (tree) ->
 
 @StoryListView = ->
   View.apply this, arguments
-  sc = _createScrollView(this)
-  _createBack(this, sc)
+  scrollView = _createScrollView(this)
+  _createBack(this, scrollView)
   return
 
 StoryListView.prototype = Object.create(View.prototype)

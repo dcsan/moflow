@@ -1,14 +1,8 @@
+@import "../../../styles/shared.styl"
+
 .minicard
   border-top: 2px solid black
   background-color: #EAC7DA
   box-shadow 0px 2px 3px rgba(0,0,0,0.5)
   height 100%
-  
-  // non select on text
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  cursor: move
+  noSelect()

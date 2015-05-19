@@ -16,12 +16,12 @@ _createBack = ->
       100
     ]
     content: 'back'
-    # properties: 'background-color': '#67FBE6'
+    properties: 'background-color': 'red'
 
   modifier = new StateModifier
     origin: [0.5, 0.5]
-    align: [0.5, 0.5]
-    transform: Transform.behind
+    align: [0, 0.5]
+    transform: Transform.translate(0,0,5)
 
   @add(modifier).add(surface)
   return
@@ -33,11 +33,11 @@ _createMain = (tree) ->
     size: [undefined, undefined ]
     template: Template.StoryOne
     data: storyData
-    classes: [ 'minicard' ]
+    # classes: [ 'minicard' ]
     properties:
       color: 'black'
       textAlign: 'center'
-      backgroundColor: 'white'
+      # backgroundColor: 'white'
 
   # surf.state = new StateModifier(transform: Transform.translate(0, 0, 1))
   # surf.pipe scrollView
@@ -51,7 +51,8 @@ _createMain = (tree) ->
   )
 
   modifier = new StateModifier
-    transform: Transform.inFront
+    # transform: Transform.inFront
+    transform: Transform.translate(5,0,0)
 
   tree.add(modifier).add(surf)
   return
