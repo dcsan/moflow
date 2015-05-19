@@ -1,49 +1,37 @@
-/**
- * Created by rubyist on 29/03/15.
- */
+//
+// TODO
+// FlowRouter implemented route names,
+// check if it meets our need instead of manual way
+//
 
-FlowRouter.route('/about', {});
-
-FlowRouter.route('/home', {
-    subscriptions: function(params, queryParams) {
-      // do subs
-    },
-    action: function() {
-        FlowRouter.go('/home');
-    }
-});
-
-
-
+// empty name, just redirect to home
 FlowRouter.route('/', {
     action: function() {
         FlowRouter.go('/home');
     }
 });
 
-FlowRouter.route('/stories', {
-    action: function() {
-        FlowRouter.go('/stories');
-    }
-});
+FlowRouter.route('/about', {});
+FlowRouter.route('/stories', {});
+FlowRouter.route('/story/:cname', {});
+FlowRouter.route('/home', {});
 
 FlowRouter.route('/cards', {
-    action: function() {
-        FlowRouter.go('/cards');
-    }
-});
-
-
-FlowRouter.route('/story/:cname', {
-
-    subscriptions: function(params, queryParams) {
-      // do subs
+    subscriptions: function(params) {
+        this.handle = Meteor.subscribeWithPagination('cards', 20)
+        this.register('CardsSub', this.handle);
     },
-  
     action: function(params, queryParams) {
-        url = '/story/' + params.cname;
-        FlowRouter.go(url);
+
     }
 });
 
+FlowRouter.route('/card/:id', {
+    subscriptions: function(params) {
+        this.handle = Meteor.subscribe('card', params.id);
+        this.register('CardSub', this.handle);
+    },
+    action: function(params, queryParams) {
 
+    }
+});

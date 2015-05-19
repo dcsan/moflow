@@ -4,11 +4,11 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-coffeescript
 meteor-platform
-raix:famono
-meteorhacks:flow-router
+coffeescript
 stylus
+percolate:paginated-subscription
+meteorhacks:flow-router
+raix:famono
 
-autopublish
 insecure

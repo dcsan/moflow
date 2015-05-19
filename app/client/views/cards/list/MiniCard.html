@@ -1,6 +1,18 @@
 <template name="MiniCard">
   <div class='minicard'>
     <h3>{{ title }}</h3>
-    <p>I am a card</p>
+    <p>{{ content }}</p>
   </div>
+</template>
+
+<template name="FullCard">
+{{#with card}}
+  <div class='minicard'>
+    <h3>{{ title }}</h3>
+    <p>{{ content }}</p>
+    {{#each subitems}}
+        {{ this }}
+    {{/each}}
+  </div>
+{{/with}}
 </template>

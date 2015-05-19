@@ -32,7 +32,7 @@ AppView = function() {
     });
 
 
-    // --header
+    //-- header
     this.header = new HeaderBarView();
     this.header.state = new StateModifier({
         transform: Transform.translate(0, 0, 10)
@@ -47,10 +47,8 @@ AppView = function() {
     });
     this.layout.footer.add(navbar.state).add(navbar);
 
-    // content
-    // Comment out this line
-    // and make animation work
-    // disabling for now
+    //-- content
+    // Commenting out this line makes animation work disabling for now
     // this.content = new Lightbox(this.options.transition);
     this.content = new RenderController();
     this.content.state = new StateModifier({
@@ -102,6 +100,7 @@ function createPages() {
     }));
 
     this.createPage('cards', new CardListView({}));
+    this.createPage('card', new CardView({}));
     this.createPage('stories', new StoryListView({}));
     this.createPage('story', new StoryOneView({}));
 
@@ -110,11 +109,22 @@ function createPages() {
 // main method to navigate between pages
 function showPage() {
     this._eventInput.on('route changed', function(name) {
-        var view = this._pages[name];
+
+        var view = this._pages[name];               // do we have that view
+
+        var prev = this.getPage();                  // get previous rendered view
+        if (prev) {
+            this._eventInput.unsubscribe(prev);     // unsubscribe from its events
+            prev.trigger('leave');                  // inform that we are leaving to stop reactive stuffs
+        }
 
         if (view) {
             this.content.show(view);
+            this._currentPage = view;
+            this._eventInput.subscribe(view);       // subscribe main app for that views events
 
+            // not very useful for now, simply checks
+            // if it the first time that view renders
             if (!view.options.run) {
                 view.trigger('ready');
                 view.options.run = true;
@@ -124,6 +134,16 @@ function showPage() {
             this.header.trigger('route changed', name)
         }
 
+    }.bind(this));
+
+    // is there any page waiting for data
+    this._eventInput.on('load start', function() {
+        this.content.show(this._pages['load']);
+    }.bind(this));
+
+    // after subscriptions ends, show actual view
+    this._eventInput.on('load end', function() {
+        this.content.show(this._currentPage);
     }.bind(this));
 }
 

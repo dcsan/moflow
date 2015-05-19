@@ -1,6 +1,6 @@
 var View          = famous.core.View;
 var Surface       = famous.core.Surface;
-var EventHandler  = famous.core.EventHandler;
+var Transform     = famous.core.Transform;
 var StateModifier = famous.modifiers.StateModifier;
 
 /*
