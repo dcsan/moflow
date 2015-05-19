@@ -32,22 +32,26 @@ AppView = function() {
 
     // --header
     this.header = new HeaderBarView();
-    this.layout.header.add(this.header);
+    this.header.state = new StateModifier({
+        transform: Transform.translate(0, 0, 10)
+    });
+    this.layout.header.add(this.header.state).add(this.header);
 
     //-- navbar
-    // var front = famous.utilities.Utility.transformInFront
-    var front = new StateModifier({
-        transform: Transform.translate(0,0,0)
-    });
     var navbar = new TabFooterView();
-    this.layout.footer.add(front).add(navbar);
+    navbar.state = new StateModifier({
+        // transform: Transform.inFront
+        transform: Transform.translate(0, 0, 10)
+    });
+    this.layout.footer.add(navbar.state).add(navbar);
 
     // content
-    var behind = new StateModifier({
-        transform: Transform.translate(0,0,-50)
-    })
     this.content = new RenderController();
-    this.layout.content.add(behind).add(this.content);
+    this.content.state = new StateModifier({
+        // transform: Transform.behind
+        transform: Transform.translate(0, 0, -10)
+    });
+    this.layout.content.add(this.content.state).add(this.content);
     this.add(this.layout);
 
 

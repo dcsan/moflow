@@ -1,9 +1,9 @@
-var View          = famous.core.View;
-var Surface       = famous.core.Surface;
-var Transform     = famous.core.Transform;
-var StateModifier = famous.modifiers.StateModifier;
+var View             = famous.core.View;
+var Surface          = famous.core.Surface;
+var Transform        = famous.core.Transform;
+var StateModifier    = famous.modifiers.StateModifier;
 
-var FlexScrollView = flex.FlexScrollView;
+var FlexScrollView   = flex.FlexScrollView;
 var CollectionLayout = flex.layouts.CollectionLayout;
 
 famodev.helpers;
@@ -63,6 +63,7 @@ function _createScrollView() {
       direction: 1,
       // autoPipeEvents: true,
       layoutOptions: {
+        // cells: [2, 1],       // [col, row]
         itemSize: [150,150],    // needs fixed size?
         margins: [10, 5, 10, 5], // outer margins
         spacing: [10, 10]        // spacing between items
@@ -92,7 +93,7 @@ function _createScrollView() {
         surf.state = new StateModifier({
             // align: [0, 0],
             // origin: [0, 0],
-            transform: Transform.translate(0, 0, 1)
+            // transform: Transform.translate(0, 0, 1)
         });
 
         surf.idx = i;
