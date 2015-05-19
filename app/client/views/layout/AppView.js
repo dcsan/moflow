@@ -1,12 +1,8 @@
-/**
- * Created by rubyist on 29/03/15.
- */
-
 var View               = famous.core.View;
 var Surface            = famous.core.Surface;
 var Transform          = famous.core.Transform;
 var StateModifier      = famous.modifiers.StateModifier;
-var EventHandler       = famous.core.EventHandler;
+// var EventHandler       = famous.core.EventHandler;
 var RenderController   = famous.views.RenderController;
 var HeaderFooterLayout = famous.views.HeaderFooterLayout;
 
@@ -19,10 +15,11 @@ var HeaderFooterLayout = famous.views.HeaderFooterLayout;
 AppView = function() {
     View.apply(this, arguments);
 
-    this.eventOutput = new EventHandler();
-    this.eventInput  = new EventHandler();
-    EventHandler.setOutputHandler(this, this.eventOutput);
-    EventHandler.setInputHandler(this, this.eventInput);
+    // do we need this ?
+    // this.eventOutput = new EventHandler();
+    // this.eventInput  = new EventHandler();
+    // EventHandler.setOutputHandler(this, this.eventOutput);
+    // EventHandler.setInputHandler(this, this.eventInput);
 
     this._pages = [];
     this._currentPage = undefined;
@@ -34,8 +31,8 @@ AppView = function() {
 
 
     // --header
-    var header = new HeaderBarView(this);
-    this.layout.header.add(header);
+    this.header = new HeaderBarView();
+    this.layout.header.add(this.header);
 
     //-- navbar
     // var front = famous.utilities.Utility.transformInFront
@@ -87,7 +84,7 @@ function createPages() {
 
 // main method to navigate between pages
 function showPage() {
-    this.eventInput.on('route changed', function(name) {
+    this._eventInput.on('route changed', function(name) {
         var view = this._pages[name];
 
         if (view) {
@@ -97,6 +94,9 @@ function showPage() {
                 view.trigger('ready');
                 view.options.run = true;
             }
+
+            // change header
+            this.header.trigger('route changed', name)
         }
 
     }.bind(this));
