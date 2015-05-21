@@ -62,11 +62,21 @@ _createScrollView = (tree) ->
         backgroundColor: 'white')
     surf.state = new StateModifier(transform: Transform.translate(0, 0, 1))
     surf.pipe scrollView
-    surf.url = "/story/" + i
     node.add(surf.state).add surf
 
+    button = new Surface
+      size: [100, 50]
+      content: "open #{i}"
+      classes: ["story-button"]
+    button.mod = new StateModifier
+      origin: [ 1, 1 ]
+      align: [ 0.95, 0.95]
+      transform: Transform.translate(0,0, 2)
+    button.url = "/story/" + i
+    node.add(button.mod).add button
+
     # TODO routing from story list to story detail page
-    surf.on('click', ->
+    button.on('click', ->
       console.log("url is", this.url)
       FlowRouter.go(this.url);
     )
