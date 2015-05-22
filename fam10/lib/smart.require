@@ -1,0 +1,11 @@
+{
+
+  "famous": {
+    "git": "https://github.com/famous/engine"
+  },
+
+  "library": {
+    "git": "https://github.com/raix/library.git"
+  }
+
+}
