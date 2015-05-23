@@ -4,3 +4,6 @@
 [submodule "packages/famous-flex-dcsan"]
 	path = packages/famous-flex-dcsan
 	url = git@github.com:dcsan/famous-flex.git
+[submodule "packages/famous-engine"]
+	path = packages/famous-engine
+	url = git@github.com:Famous/engine.git

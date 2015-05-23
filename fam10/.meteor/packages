@@ -7,8 +7,8 @@
 meteor-platform
 coffeescript
 stylus
-percolate:paginated-subscription
-meteorhacks:flow-router
+# percolate:paginated-subscription
+# meteorhacks:flow-router
 raix:famono
 
 insecure
